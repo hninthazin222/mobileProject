@@ -5,7 +5,7 @@
  */
 
 body {
-  background-color: #fff;
+  background-color: #80cbc4;
   font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
 }
 
@@ -26,6 +26,9 @@ body {
     padding: 0 30px;
     border-left: 1px solid #e7e7e7;
   }
+}
+.navbar{
+  background: #80cbc4;
 }
 
 .navbar-top-links {
@@ -85,7 +88,9 @@ body {
   right: 0;
   left: auto;
 }
-
+.sidebar{
+  background: #80cbc4;
+}
 .sidebar .sidebar-nav.navbar-collapse {
   padding-right: 0;
   padding-left: 0;

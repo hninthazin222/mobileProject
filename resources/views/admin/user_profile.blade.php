@@ -7,20 +7,21 @@
         <div id="page-wrapper">
             <div class="row">
                 <div class="col-lg-12">
-                    <h1 class="page-header"><i class="fa fa-user"></i> {{$userName->name}} Profile</h1>
+                    <h1 class="page-header"><i class="fa fa-user"></i><span class="text-success"> {{$userName->name}}</span> Profile</h1>
                 </div>
                 <!-- /.col-lg-12 -->
             </div>
             <div class="row">
                 @yield('section')
                 <div class="text-center">
-                    <img src="{{route('userImg',['user_image'=>$userName->name])}}" style="height: 200px; width: 200px;" class="img img-thumbnail">
+                    <img src="{{route('userImg',['user_image'=>$userName->name])}}" style="height: 200px; width: 200px;border-radius: 100%" class="img img-thumbnail">
                 </div>
             </div>
             <div class="row">
                 <div class="col-md-4 col-md-offset-4">
                     <form action="{{route('imgUpload')}}" method="post" enctype="multipart/form-data">
-                        <div class="form-group">
+                        <div class="form-group @if($errors->has('user_image')) has-error @endif">
+                            @if($errors->has('user_image')) <span class="help-block">{{$errors->first('user_image')}}</span> @endif
                             <label for="user_image" class="control-label">Select User Image</label>
                             <input type="file" name="user_image" id="user_image col-md-4" style="height: auto">
                             <button type="submit" class="btn btn-primary btn-block">Upload Image</button>

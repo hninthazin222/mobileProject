@@ -15,6 +15,10 @@ Route::get('/',[
     'uses'=>'AuthController@login',
     'as'=>'/'
 ]);
+Route::get('/nav_bar',[
+    'uses'=>'HomeController@nav_bar',
+    'as'=>'nav_bar'
+]);
 Route::get('/login',[
     'uses'=>'AuthController@login',
     'as'=>'/login'
@@ -28,7 +32,10 @@ Route::post('/login',[
 
 Route::group(['middleware'=>'role:Admin'],function (){
 
-
+    Route::post('/add-to-cart',[
+        'uses'=>'CartController@postAddToCart',
+        'as'=>'add-to-cart'
+    ]);
     Route::get('/register',[
         'uses'=>'AuthController@register',
         'as'=>'register'
@@ -37,11 +44,106 @@ Route::group(['middleware'=>'role:Admin'],function (){
         'uses'=>'AuthController@getRegister',
         'as'=>'register'
     ]);
+    Route::get('employees',[
+        'uses'=>'HomeController@employees',
+        'as'=>'employees'
+    ]);
+    Route::post('/updateUserRole',[
+        'uses'=>'HomeController@updateUserRole',
+        'as'=>'updateUserRole'
+    ]);
+    Route::post('/deleteUserRole',[
+        'uses'=>'HomeController@deleteUserRole',
+        'as'=>'deleteUserRole'
+    ]);
+    Route::get('/changePassword',[
+        'uses'=>'HomeController@changePassword',
+        'as'=>'changePassword'
+    ]);
 
 });
 
 Route::group(['middleware'=>'auth'],function (){
 
+    Route::get('/detail/{id}',[
+        'uses'=>'ReportController@getDetail',
+        'as'=>'detail'
+    ]);
+    Route::get('/print/{id}',[
+        'uses'=>'ReportController@getPrint',
+        'as'=>'print'
+    ]);
+    Route::get('/search-by-date',[
+        'uses'=>'ReportController@searchByDate',
+        'as'=>'search-by-date'
+    ]);
+    Route::get('report',[
+        'uses'=>'ReportController@report',
+        'as'=>'report'
+    ]);
+    Route::post('/getCustomer',[
+        'uses'=>'CartController@getCustomer',
+        'as'=>'getCustomer'
+    ]);
+    Route::post('/payment',[
+        'uses'=>'CartController@payment',
+        'as'=>'payment'
+    ]);
+    Route::get('/decrease-item/{id}',[
+        'uses'=>'CartController@getDecreaseItem',
+        'as'=>'decrease-item'
+    ]);
+    Route::get('/increase-item/{id}',[
+        'uses'=>'CartController@getIncreaseItem',
+        'as'=>'increase-item'
+    ]);
+    Route::get('/remove-item/{id}',[
+        'uses'=>'CartController@getRemoveItem',
+        'as'=>'remove-item'
+    ]);
+    Route::get('/sale',[
+        'uses'=>'CartController@salePage',
+        'as'=>'sale'
+    ]);
+    Route::post('/edit-product',[
+        'uses'=>'ProductController@getEditProduct',
+        'as'=>'edit-product'
+    ]);
+    Route::get('/edit-page/{id}',[
+        'uses'=>'ProductController@editProPage',
+        'as'=>'edit-page'
+    ]);
+    Route::get('/delete-product',[
+        'uses'=>'ProductController@deleteProduct',
+        'as'=>'delete-product'
+    ]);
+    Route::post('/barcode',[
+        'uses'=>'ProductController@barCode',
+        'as'=>'barcode'
+    ]);
+    Route::post('/new-product',[
+        'uses'=>'ProductController@insertNewProduct',
+        'as'=>'new-product'
+    ]);
+    Route::get('/product',[
+        'uses'=>'ProductController@product',
+        'as'=>'product'
+    ]);
+    Route::get('/newProduct',[
+        'uses'=>'ProductController@newProduct',
+        'as'=>'newProduct'
+    ]);
+    Route::get('/delCat',[
+        'uses'=>'ProductController@delCat'
+    ]);
+    Route::get('/insertCat',[
+        'uses'=>'ProductController@insertCat',
+        'as'=>'insertCat'
+    ]);
+    Route::get('/category',[
+        'uses'=>'ProductController@category',
+        'as'=>'category'
+    ]);
     Route::get('/userImg/{user_image}',[
         'uses'=>'AuthController@userImg',
         'as'=>'userImg'

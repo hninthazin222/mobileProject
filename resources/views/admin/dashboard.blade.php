@@ -1,5 +1,5 @@
 @extends('admin.layouts.app')
-
+@section('title') MyApp Dashboard @stop
 @section('body')
     <div id="wrapper">
       @include('admin.layouts.nav_bar')

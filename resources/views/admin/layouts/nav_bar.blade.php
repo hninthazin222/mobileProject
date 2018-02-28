@@ -7,7 +7,7 @@
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
         </button>
-        <a class="navbar-brand" href="{{ url ('/admin') }}">{{ config('app.name', 'Laravel') }}</a>
+        <a class="navbar-brand" href="{{ route('dashboard')  }}">My App</a>
     </div>
     <!-- /.navbar-header -->
 
@@ -56,94 +56,35 @@
                 <li {{ (Request::is('/') ? 'class="active"' : '') }}>
                     <a href="{{ route('dashboard') }}"><i class="fa fa-dashboard fa-fw"></i> Dashboard</a>
                 </li>
+                <li {{ (Request::is('/') ? 'class="active"' : '') }}>
+                    <a href="{{ route('sale') }}"><i class="fa fa-share-alt fa-fw"></i> Sale</a>
+                </li>
+
                 <li {{ (Request::is('*charts') ? 'class="active"' : '') }}>
                     <a href="{{ route('register') }}"><i class="fa fa-user-plus"></i> New Employee</a>
                     <!-- /.nav-second-level -->
                 </li>
                 <li {{ (Request::is('*tables') ? 'class="active"' : '') }}>
-                    <a href="{{ url ('tables') }}"><i class="fa fa-table fa-fw"></i> Tables</a>
+                    <a href="{{ route('employees') }}"><i class="fa fa-users"></i> Employees</a>
                 </li>
                 <li {{ (Request::is('*forms') ? 'class="active"' : '') }}>
-                    <a href="{{ url ('forms') }}"><i class="fa fa-edit fa-fw"></i> Forms</a>
+                    <a href="{{ route('category') }}"><i class="fa fa-list"></i> Categories</a>
                 </li>
                 <li>
-                    <a href="#"><i class="fa fa-wrench fa-fw"></i> UI Elements<span class="fa arrow"></span></a>
+                    <a href="#"><i class="fa fa-wrench fa-fw"></i> Product<span class="fa arrow"></span></a>
                     <ul class="nav nav-second-level">
                         <li {{ (Request::is('*panels') ? 'class="active"' : '') }}>
-                            <a href="{{ url ('panels') }}">Panels and Collapsibles</a>
+                            <a href="{{ route('newProduct') }}"><i class="fa fa-plus-circle"></i> New Item</a>
                         </li>
                         <li {{ (Request::is('*buttons') ? 'class="active"' : '') }}>
-                            <a href="{{ url ('buttons' ) }}">Buttons</a>
+                            <a href="{{ route('product') }}"><i class="fa fa-google-wallet"></i> Items</a>
                         </li>
-                        <li {{ (Request::is('*notifications') ? 'class="active"' : '') }}>
-                            <a href="{{ url('notifications') }}">Alerts</a>
-                        </li>
-                        <li {{ (Request::is('*typography') ? 'class="active"' : '') }}>
-                            <a href="{{ url ('typography') }}">Typography</a>
-                        </li>
-                        <li {{ (Request::is('*icons') ? 'class="active"' : '') }}>
-                            <a href="{{ url ('icons') }}"> Icons</a>
-                        </li>
-                        <li {{ (Request::is('*grid') ? 'class="active"' : '') }}>
-                            <a href="{{ url ('grid') }}">Grid</a>
-                        </li>
-                        <li {{ (Request::is('*progressbars') ? 'class="active"' : '') }}>
-                            <a href="{{ url ('progressbars') }}">Progressbars</a>
-                        </li>
-                        <li {{ (Request::is('*collapse') ? 'class="active"' : '') }}>
-                            <a href="{{ url ('collapse') }}">Collapse</a>
-                        </li>
-                        <li {{ (Request::is('*stats') ? 'class="active"' : '') }}>
-                            <a href="{{ url ('stats') }}">Stats</a>
-                        </li>
+
                     </ul>
                     <!-- /.nav-second-level -->
                 </li>
-                <li>
-                    <a href="#">
-                        <i class="fa fa-sitemap fa-fw"></i> Multi-Level Dropdown<span class="fa arrow"></span>
-                    </a>
-                    <ul class="nav nav-second-level">
-                        <li>
-                            <a href="#">Second Level Item</a>
-                        </li>
-                        <li>
-                            <a href="#">Second Level Item</a>
-                        </li>
-                        <li>
-                            <a href="#">Third Level <span class="fa arrow"></span></a>
-                            <ul class="nav nav-third-level">
-                                <li>
-                                    <a href="#">Third Level Item</a>
-                                </li>
-                                <li>
-                                    <a href="#">Third Level Item</a>
-                                </li>
-                                <li>
-                                    <a href="#">Third Level Item</a>
-                                </li>
-                                <li>
-                                    <a href="#">Third Level Item</a>
-                                </li>
-                            </ul>
-                            <!-- /.nav-third-level -->
-                        </li>
-                    </ul>
-                    <!-- /.nav-second-level -->
-                </li>
-                <li>
-                    <a href="#">
-                        <i class="fa fa-files-o fa-fw"></i> Sample Pages<span class="fa arrow"></span>
-                    </a>
-                    <ul class="nav nav-second-level">
-                        <li {{ (Request::is('*blank') ? 'class="active"' : '') }}>
-                            <a href="{{ url ('blank') }}">Blank Page</a>
-                        </li>
-                        <li>
-                            <a href="{{ url ('login') }}">Login Page</a>
-                        </li>
-                    </ul>
-                    <!-- /.nav-second-level -->
+                <li {{ (Request::is('*forms') ? 'class="active"' : '') }}>
+                    <a href="{{ route('report') }}"><i class="fa fa-bar-chart"></i> Report</a>
                 </li>
                 <li {{ (Request::is('*documentation') ? 'class="active"' : '') }}>
                     <a href="{{ url ('documentation') }}"><i class="fa fa-file-word-o fa-fw"></i> Documentation</a>

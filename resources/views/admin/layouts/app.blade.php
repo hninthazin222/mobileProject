@@ -11,6 +11,7 @@
     <link rel="stylesheet" href="{{ asset('css/app.css') }}">
     <link rel="stylesheet" href="{{ asset('css/admin.css') }}">
     <link rel="stylesheet" href="{{ asset('css/timeline.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/dataTable.css') }}">
 
     <!-- Scripts -->
     <script>
@@ -26,5 +27,7 @@
 <script src="{{ asset("js/app.js") }}"></script>
 <script src="{{ asset("js/Chart.js") }}"></script>
 <script src="{{ asset("js/admin.js") }}"></script>
+<script src="{{ asset("js/newApp.js") }}"></script>
+<script src="{{ asset("js/dataTable.js") }}"></script>
 </body>
 </html>
